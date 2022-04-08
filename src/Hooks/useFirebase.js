@@ -6,13 +6,11 @@ initializeAuthentication();
 const useFirebase=()=>{
     const [user,setUser]=useState({})
     const auth = getAuth();
+    
     const signUpWithGoogle=()=>{
         const googleProvider = new GoogleAuthProvider();
-        signInWithPopup(auth, googleProvider)
-        .then((result) => {
+       return signInWithPopup(auth, googleProvider)
         
-        setUser(result.user)
-        })
     }
 
     useEffect(()=>{
